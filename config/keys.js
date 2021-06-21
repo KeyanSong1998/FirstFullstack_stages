@@ -1,6 +1,10 @@
-module.exports = {
-    googleClidentID: '1036627373433-vm4a7isfp21ujj0jm0r0mjktpj1tl2td.apps.googleusercontent.com',
-    googleClidentSecret: '4j9u-YJ067ieuWAMevCu4oO8'
-};
+if(process.env.NODE_ENV === 'production'){
+    // we are in production -return the prod set of keys. 
+    module.exports = require('./prod');
+}else{
+    // we are in development -return the dev keys. 
+    module.exports = require('./dev');
+}
+
 
 
